@@ -497,20 +497,20 @@ const Contact = () => {
             </a>
           </Magnetic>
           <Magnetic strength={0.2}>
-            <a href="tel:+639761279041" className="flex items-center gap-4 hover:text-orange-500 transition-colors w-fit">
-              <Phone className="w-8 h-8" /> +63 976 127 9041
+            <a href="tel:+639766276127" className="flex items-center gap-4 hover:text-orange-500 transition-colors w-fit">
+              <Phone className="w-8 h-8" /> +63 976 627 6127
             </a>
           </Magnetic>
         </div>
         
         <div className="mt-16 flex flex-wrap gap-6">
           <Magnetic strength={0.3}>
-            <a href="https://calendar.notion.so/meet/glendell/u5dj04o7m" target="_blank" rel="noreferrer" className="block px-8 py-4 bg-orange-600 text-white font-bold tracking-widest uppercase text-sm hover:bg-orange-500 transition-colors">
-              Book a Call
+            <a href="https://glendell.notion.site/1f9b2d6fda59802aa861ff1e2fd34365" target="_blank" rel="noreferrer" className="block px-8 py-4 bg-orange-600 text-white font-bold tracking-widest uppercase text-sm hover:bg-orange-500 transition-colors">
+              Send me a message
             </a>
           </Magnetic>
           <Magnetic strength={0.3}>
-            <a href="https://drive.google.com/file/d/1rXuLaZGz0z3Jp5HEzh15OX5FHgrAMGbO/view?usp=sharing" target="_blank" rel="noreferrer" className="block px-8 py-4 border border-zinc-700 text-zinc-300 font-bold tracking-widest uppercase text-sm hover:bg-zinc-800 transition-colors">
+            <a href="https://drive.google.com/file/d/1yWnLOVVqQ1pRgZ-zc4zMX-1lB5Nilg4Z/view?usp=sharing" target="_blank" rel="noreferrer" className="block px-8 py-4 border border-zinc-700 text-zinc-300 font-bold tracking-widest uppercase text-sm hover:bg-zinc-800 transition-colors">
               View Resume
             </a>
           </Magnetic>
@@ -521,7 +521,6 @@ const Contact = () => {
         <div className="flex flex-wrap gap-8">
           <a href="https://github.com/glendell03" target="_blank" rel="noreferrer" className="text-zinc-400 hover:text-zinc-50 transition-colors flex items-center gap-2 uppercase font-mono text-sm"><Github className="w-4 h-4"/> Github</a>
           <a href="https://www.linkedin.com/in/glendell03/" target="_blank" rel="noreferrer" className="text-zinc-400 hover:text-zinc-50 transition-colors flex items-center gap-2 uppercase font-mono text-sm"><Linkedin className="w-4 h-4"/> LinkedIn</a>
-          <a href="https://glendell.notion.site/" target="_blank" rel="noreferrer" className="text-zinc-400 hover:text-zinc-50 transition-colors flex items-center gap-2 uppercase font-mono text-sm"><Globe className="w-4 h-4"/> Notion</a>
         </div>
         <div className="text-zinc-600 font-mono text-sm uppercase">
           © 2026 Glendell Bringino
