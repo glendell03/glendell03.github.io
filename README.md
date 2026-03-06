@@ -18,3 +18,12 @@ View your app in AI Studio: https://ai.studio/apps/3afbfa42-7fe2-4474-b3d4-f42fb
 2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
 3. Run the app:
    `npm run dev`
+
+## Deploy to GitHub Pages
+
+1. Run:
+   `npm run deploy`
+2. Open the site at:
+   `https://glendell03.github.io`
+
+GitHub Pages can take a minute or two to finish publishing after deploy.
