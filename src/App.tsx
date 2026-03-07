@@ -548,34 +548,10 @@ const KineticExperience = () => {
   return (
     <div
       ref={containerRef}
-      className="relative bg-zinc-950 text-zinc-50 z-30 shadow-[0_-20px_50px_rgba(0,0,0,0.5)]"
+      className="relative text-zinc-50 z-30"
       style={{ height: `${experiences.length * 100}vh` }}
     >
       <div className="sticky top-0 h-screen w-full overflow-hidden flex">
-        {/* Background Image */}
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={activeIndex}
-            initial={{
-              clipPath: "polygon(0 100%, 100% 100%, 100% 100%, 0 100%)",
-              scale: 1.1,
-            }}
-            animate={{
-              clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
-              scale: 1,
-            }}
-            exit={{
-              clipPath: "polygon(0 0, 100% 0, 100% 0, 0 0)",
-              scale: 0.95,
-            }}
-            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-            className="absolute inset-0 w-full h-full"
-          >
-            <div className="w-full h-full bg-zinc-900 animate-pulse opacity-20" />
-            <div className="absolute inset-0 bg-gradient-to-r from-zinc-950 via-zinc-950/80 to-transparent" />
-          </motion.div>
-        </AnimatePresence>
-
         {/* Content */}
         <div className="relative z-10 w-full max-w-7xl mx-auto flex flex-col h-full p-8 md:p-16">
           <h2 className="text-sm font-mono tracking-widest uppercase text-zinc-500 shrink-0 mb-8 md:mb-12">
