@@ -376,7 +376,7 @@ const Hero = () => {
 
 const Profile = () => {
   return (
-    <div className="relative min-h-screen w-full bg-zinc-50 text-zinc-950 flex flex-col justify-center p-8 md:p-16 z-20 shadow-[0_-20px_50px_rgba(0,0,0,0.5)]">
+    <div className="relative min-h-screen w-full bg-zinc-50 text-zinc-950 flex flex-col justify-center p-8 md:p-16 z-20 shadow-[0_-2px_20px_rgba(0,0,0,0.06)]">
       <div className="max-w-6xl mx-auto w-full">
         <h2 className="text-sm font-mono tracking-widest uppercase text-zinc-500 mb-12">
           01 — Profile
@@ -475,7 +475,7 @@ const Profile = () => {
 
 const Projects = () => {
   return (
-    <div className="relative min-h-screen w-full bg-zinc-100 text-zinc-950 flex flex-col justify-center p-8 md:p-16 z-[25] shadow-[0_-20px_50px_rgba(0,0,0,0.5)]">
+    <div className="relative min-h-screen w-full bg-zinc-100 text-zinc-950 flex flex-col justify-center p-8 md:p-16 z-[25] shadow-[0_-2px_20px_rgba(0,0,0,0.06)]">
       <div className="max-w-6xl mx-auto w-full">
         <h2 className="text-sm font-mono tracking-widest uppercase text-zinc-500 mb-12">
           02 — Projects
@@ -660,7 +660,7 @@ const KineticExperience = () => {
 
 const TechStack = () => {
   return (
-    <div className="relative h-screen w-full bg-orange-600 text-zinc-950 flex flex-col justify-center overflow-hidden z-40 shadow-[0_-20px_50px_rgba(0,0,0,0.5)]">
+    <div className="relative h-screen w-full bg-orange-600 text-zinc-950 flex flex-col justify-center overflow-hidden z-40 shadow-[0_-2px_20px_rgba(0,0,0,0.06)]">
       <div className="absolute top-8 md:top-16 left-8 md:left-16 z-10">
         <h2 className="text-sm font-mono tracking-widest uppercase text-zinc-900 font-bold">
           04 — Technologies
@@ -705,7 +705,7 @@ const TechStack = () => {
 
 const Contact = () => {
   return (
-    <div className="relative min-h-screen w-full bg-zinc-950 text-zinc-50 flex flex-col justify-between p-8 md:p-16 z-50 shadow-[0_-20px_50px_rgba(0,0,0,0.5)]">
+    <div className="relative min-h-screen w-full bg-zinc-950 text-zinc-50 flex flex-col justify-between p-8 md:p-16 z-50 shadow-[0_-2px_20px_rgba(0,0,0,0.06)]">
       <div className="max-w-6xl mx-auto w-full flex-1 flex flex-col justify-center">
         <TextReveal
           text="LET'S TALK."
