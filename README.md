@@ -21,9 +21,9 @@ View your app in AI Studio: https://ai.studio/apps/3afbfa42-7fe2-4474-b3d4-f42fb
 
 ## Deploy to GitHub Pages
 
-1. Run:
-   `npm run deploy`
-2. Open the site at:
-   `https://glendell03.github.io`
+Merging to `main` now triggers a GitHub Actions workflow that builds the Vite app and deploys the generated `dist` output to GitHub Pages.
+
+After the workflow completes, open:
+`https://glendell03.github.io`
 
 GitHub Pages can take a minute or two to finish publishing after deploy.
