@@ -512,35 +512,37 @@ const Projects = () => {
 
         <div className="flex flex-col border-t border-zinc-300">
           {projects.map((project, i) => (
-            <Magnetic key={i} strength={0.1}>
-              <a
-                href={project.link}
-                target="_blank"
-                rel="noreferrer"
-                className="group flex flex-col md:flex-row justify-between items-start md:items-center py-8 border-b border-zinc-300 hover:px-8 transition-all duration-500 relative overflow-hidden"
-              >
-                <div className="absolute inset-0 bg-orange-600 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-[0.22,1,0.36,1] -z-10" />
+            <React.Fragment key={i}>
+              <Magnetic strength={0.1}>
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="group flex flex-col md:flex-row justify-between items-start md:items-center py-8 border-b border-zinc-300 hover:px-8 transition-all duration-500 relative overflow-hidden"
+                >
+                  <div className="absolute inset-0 bg-orange-600 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-[0.22,1,0.36,1] -z-10" />
 
-                <div className="flex items-center gap-8 z-10 group-hover:text-white transition-colors duration-300">
-                  <span className="text-sm font-mono text-zinc-400 group-hover:text-orange-200">
-                    0{i + 1}
-                  </span>
-                  <h3 className="text-3xl md:text-5xl font-display font-bold">
-                    {project.name}
-                  </h3>
-                </div>
+                  <div className="flex items-center gap-8 z-10 group-hover:text-white transition-colors duration-300">
+                    <span className="text-sm font-mono text-zinc-400 group-hover:text-orange-200">
+                      0{i + 1}
+                    </span>
+                    <h3 className="text-3xl md:text-5xl font-display font-bold">
+                      {project.name}
+                    </h3>
+                  </div>
 
-                <div className="flex items-center gap-8 mt-4 md:mt-0 z-10 group-hover:text-white transition-colors duration-300">
-                  <p className="text-zinc-500 group-hover:text-orange-100">
-                    {project.role}
-                  </p>
-                  <span className="text-sm font-mono bg-zinc-200 group-hover:bg-orange-500 px-3 py-1 rounded-full">
-                    {project.date}
-                  </span>
-                  <ArrowRight className="w-6 h-6 transform -rotate-45 group-hover:rotate-0 transition-transform duration-500" />
-                </div>
-              </a>
-            </Magnetic>
+                  <div className="flex items-center gap-8 mt-4 md:mt-0 z-10 group-hover:text-white transition-colors duration-300">
+                    <p className="text-zinc-500 group-hover:text-orange-100">
+                      {project.role}
+                    </p>
+                    <span className="text-sm font-mono bg-zinc-200 group-hover:bg-orange-500 px-3 py-1 rounded-full">
+                      {project.date}
+                    </span>
+                    <ArrowRight className="w-6 h-6 transform -rotate-45 group-hover:rotate-0 transition-transform duration-500" />
+                  </div>
+                </a>
+              </Magnetic>
+            </React.Fragment>
           ))}
         </div>
       </div>
