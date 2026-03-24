@@ -31,7 +31,7 @@ const experiences = [
   {
     company: "Carsu",
     role: "Full Stack Developer",
-    date: "March 2024 - Present",
+    date: "March 2024 - March 2026",
     location: "Italy (Remote)",
     industry: "SaaS / Automotive",
     type: "Freelance",
@@ -117,8 +117,7 @@ const experiences = [
 ];
 
 const projects = [
-  { name: "Suiki", role: "Full Stack Developer", date: "Present", link: "#" },
-  { name: "Kaching", role: "Full Stack Developer", date: "2025", link: "#" },
+  { name: "Suiki", role: "Full Stack Developer", date: "Present", link: "https://glendell03.github.io/suiki" },
   {
     name: "IPFSR Website",
     role: "Frontend Developer",
