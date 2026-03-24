@@ -31,7 +31,7 @@ const experiences = [
   {
     company: "Carsu",
     role: "Full Stack Developer",
-    date: "March 2024 - Present",
+    date: "March 2024 - March 2026",
     location: "Italy (Remote)",
     industry: "SaaS / Automotive",
     type: "Freelance",
@@ -117,8 +117,7 @@ const experiences = [
 ];
 
 const projects = [
-  { name: "Suiki", role: "Full Stack Developer", date: "Present", link: "#" },
-  { name: "Kaching", role: "Full Stack Developer", date: "2025", link: "#" },
+  { name: "Suiki", role: "Full Stack Developer", date: "Present", link: "https://glendell03.github.io/suiki" },
   {
     name: "IPFSR Website",
     role: "Frontend Developer",
@@ -326,30 +325,37 @@ const CustomCursor = () => {
 // --- Sections ---
 
 const Hero = () => {
+  const heroRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: heroRef,
+    offset: ["start start", "end start"],
+  });
+
+  const contentY = useTransform(scrollYProgress, [0, 1], ["0%", "-22%"]);
+  const scrollIndicatorOpacity = useTransform(scrollYProgress, [0, 0.12], [1, 0]);
+
   return (
-    <div className="relative h-screen w-full bg-zinc-950 text-zinc-50 flex flex-col justify-between p-8 md:p-16 z-10 overflow-hidden">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,rgba(234,88,12,0.1),rgba(0,0,0,0)_50%)]" />
+    <div
+      ref={heroRef}
+      className="relative h-screen w-full bg-zinc-950 text-zinc-50 flex flex-col justify-between p-8 md:p-16 z-10 overflow-hidden"
+    >
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_110%,rgba(234,88,12,0.13),transparent)]" />
 
-      <div className="flex justify-between items-start relative z-10">
-        <motion.span
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1 }}
-          className="text-sm font-mono tracking-widest uppercase text-zinc-400"
-        >
+      <motion.div
+        className="flex justify-between items-start relative z-10"
+        initial={{ opacity: 0, y: -8 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 1.2, duration: 0.6, ease: "easeOut" }}
+      >
+        <span className="text-sm font-mono tracking-widest uppercase text-zinc-400">
           PORTFOLIO '26
-        </motion.span>
-        <motion.span
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1 }}
-          className="text-sm font-mono tracking-widest uppercase text-zinc-400"
-        >
+        </span>
+        <span className="text-sm font-mono tracking-widest uppercase text-zinc-400">
           METRO MANILA, PH
-        </motion.span>
-      </div>
+        </span>
+      </motion.div>
 
-      <div className="flex flex-col relative z-10">
+      <motion.div className="flex flex-col relative z-10" style={{ y: contentY }}>
         <TextReveal
           text="GLENDELL"
           className="text-[15vw] font-display font-bold leading-[0.85] tracking-tighter"
@@ -359,17 +365,39 @@ const Hero = () => {
           className="text-[15vw] font-display font-bold leading-[0.85] tracking-tighter text-zinc-500"
         />
         <motion.div
-          initial={{ opacity: 0, x: -50 }}
+          initial={{ opacity: 0, x: -40 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, delay: 0.8, ease: "easeOut" }}
+          transition={{ duration: 0.7, delay: 0.9, ease: [0.22, 1, 0.36, 1] }}
           className="mt-8 flex items-center gap-4"
         >
-          <div className="h-[2px] w-16 bg-orange-600" />
+          <motion.div
+            className="h-[2px] bg-orange-600 shrink-0"
+            initial={{ width: 0 }}
+            animate={{ width: 64 }}
+            transition={{ duration: 0.8, delay: 1.0, ease: [0.22, 1, 0.36, 1] }}
+          />
           <span className="text-xl md:text-3xl font-light tracking-widest uppercase">
             SOFTWARE ENGINEER
           </span>
         </motion.div>
-      </div>
+      </motion.div>
+
+      <motion.div
+        className="absolute bottom-8 md:bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 z-10"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.7, duration: 0.8 }}
+        style={{ opacity: scrollIndicatorOpacity }}
+      >
+        <span className="text-[10px] font-mono tracking-[0.3em] uppercase text-zinc-500">
+          SCROLL
+        </span>
+        <motion.div
+          className="w-[1px] h-10 origin-top bg-gradient-to-b from-zinc-500 to-transparent"
+          animate={{ scaleY: [0.2, 1, 0.2] }}
+          transition={{ repeat: Infinity, duration: 1.8, ease: "easeInOut" }}
+        />
+      </motion.div>
     </div>
   );
 };
@@ -483,35 +511,37 @@ const Projects = () => {
 
         <div className="flex flex-col border-t border-zinc-300">
           {projects.map((project, i) => (
-            <Magnetic key={i} strength={0.1}>
-              <a
-                href={project.link}
-                target="_blank"
-                rel="noreferrer"
-                className="group flex flex-col md:flex-row justify-between items-start md:items-center py-8 border-b border-zinc-300 hover:px-8 transition-all duration-500 relative overflow-hidden"
-              >
-                <div className="absolute inset-0 bg-orange-600 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-[0.22,1,0.36,1] -z-10" />
+            <React.Fragment key={i}>
+              <Magnetic strength={0.1}>
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="group flex flex-col md:flex-row justify-between items-start md:items-center py-8 border-b border-zinc-300 hover:px-8 transition-all duration-500 relative overflow-hidden"
+                >
+                  <div className="absolute inset-0 bg-orange-600 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-[0.22,1,0.36,1] -z-10" />
 
-                <div className="flex items-center gap-8 z-10 group-hover:text-white transition-colors duration-300">
-                  <span className="text-sm font-mono text-zinc-400 group-hover:text-orange-200">
-                    0{i + 1}
-                  </span>
-                  <h3 className="text-3xl md:text-5xl font-display font-bold">
-                    {project.name}
-                  </h3>
-                </div>
+                  <div className="flex items-center gap-8 z-10 group-hover:text-white transition-colors duration-300">
+                    <span className="text-sm font-mono text-zinc-400 group-hover:text-orange-200">
+                      0{i + 1}
+                    </span>
+                    <h3 className="text-3xl md:text-5xl font-display font-bold">
+                      {project.name}
+                    </h3>
+                  </div>
 
-                <div className="flex items-center gap-8 mt-4 md:mt-0 z-10 group-hover:text-white transition-colors duration-300">
-                  <p className="text-zinc-500 group-hover:text-orange-100">
-                    {project.role}
-                  </p>
-                  <span className="text-sm font-mono bg-zinc-200 group-hover:bg-orange-500 px-3 py-1 rounded-full">
-                    {project.date}
-                  </span>
-                  <ArrowRight className="w-6 h-6 transform -rotate-45 group-hover:rotate-0 transition-transform duration-500" />
-                </div>
-              </a>
-            </Magnetic>
+                  <div className="flex items-center gap-8 mt-4 md:mt-0 z-10 group-hover:text-white transition-colors duration-300">
+                    <p className="text-zinc-500 group-hover:text-orange-100">
+                      {project.role}
+                    </p>
+                    <span className="text-sm font-mono bg-zinc-200 group-hover:bg-orange-500 px-3 py-1 rounded-full">
+                      {project.date}
+                    </span>
+                    <ArrowRight className="w-6 h-6 transform -rotate-45 group-hover:rotate-0 transition-transform duration-500" />
+                  </div>
+                </a>
+              </Magnetic>
+            </React.Fragment>
           ))}
         </div>
       </div>
